@@ -1,63 +1,73 @@
-import React from 'react'
-import './Footer.css'
-import Logo from '../../assets/antariksh-logo.png'
-import Instagram from '../../assets/Instagram.svg'
-import Twitter from '../../assets/Twitter.svg'
-import LinkedIn from '../../assets/LinkedIn.svg'
-import Email from '../../assets/Email.svg'
+import React from 'react';
+import './Footer.css';
+import Logo from '../../assets/antariksh-logo.png';
+import Instagram from '../../assets/Instagram.svg';
+import Twitter from '../../assets/Twitter.svg';
+import LinkedIn from '../../assets/LinkedIn.svg';
+import Email from '../../assets/Email.svg';
 
-import { Link } from 'react-router-dom'
 function Footer() {
     return (
         <div id="Footer">
             <div className="footer-main">
-                <ul className="footer-row-cont">
-                    <li>
-                        <div className="footer-logo">
-                            <a href="/" target="_blank"><img className="icon" src={Logo} alt=""/></a>
-                        </div>
-                        <div className="social-medias">
-                            <div className="text">Social Media</div>
-                            <div className="icons">
-                                <a href="https://www.instagram.com/antariksh_nitkkr/" target="_blank"><img src={Instagram} alt=""/></a>
-                                {/* <a href="https://twitter.com/antariksh_nitkkr" target="_blank"><img src={Twitter} alt=""/></a> */}
-                                <a href="https://in.linkedin.com/antariksh_nitkkr" target="_blank"><img src={LinkedIn} alt=""/></a>
-                                <a href="mailto:antariksh_nitkkr@gmail.com" target="_blank"><img src={Email} alt=""/></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className="links-heading">Club</div>
-                        <ul>
-                            <div className="footer-links"><a href="#About">About Us</a></div>
-                            <div className="footer-links"><a href="#EventsPage">Our Events</a></div>
-                            <div className="footer-links"><a href="#Members">Members</a></div>
+                <div className="footer-logo">
+                    <a href="/" target="_blank" rel="noopener noreferrer">
+                        <img className="icon" src={Logo} alt="Antariksh Logo" />
+                    </a>
+                </div>
+
+                <div className="links-container">
+                    <div>
+                        <h3 className="footer-title">Club</h3>
+                        <ul className="footer-links">
+                            <li><a href="#About">About Us</a></li>
+                            <li><a href="#EventsPage">Our Events</a></li>
+                            <li><a href="#Members">Members</a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <div className="links-heading">Get Help</div>
-                        <ul>
-                            <div className="footer-links"><a href="#">FAQs</a></div>
-                            <div className="footer-links"><a href="/">Antariksh</a></div>
-                            <div className="footer-links"><a href="mailto:antariksh_nitkkr@gmail.com">Message</a></div>
+                    </div>
+                    <div>
+                        <h3 className="footer-title">Get Help</h3>
+                        <ul className="footer-links">
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="/">Antariksh</a></li>
+                            <li><a href="mailto:antariksh_nitkkr@gmail.com">Message</a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <div className="links-heading">Others</div>
-                        <ul>
-                            <div className="footer-links"><a href="#Gallery">Gallery</a></div>
-                            <div className="footer-links"><a href="#">Affiliate Program</a></div>
-                            <div className="footer-links"><a href="#">Support Details</a></div>
+                    </div>
+                    <div>
+                        <h3 className="footer-title">Others</h3>
+                        <ul className="footer-links">
+                            <li><a href="#Gallery">Gallery</a></li>
+                            <li><a href="#">Affiliate Program</a></li>
+                            <li><a href="#">Support Details</a></li>
                         </ul>
-                    </li>
-                </ul>
+                    </div>
+                </div>
+
+                <div className="social-medias">
+                    <h3 className="footer-title">Follow Us</h3>
+                    <div className="icons">
+                        <a href="https://www.instagram.com/antariksh_nitkkr?igsh=MXg4ZzRscnk4cGF3eg==" target="_blank" rel="noopener noreferrer">
+                            <img src={Instagram} alt="Instagram" />
+                        </a>
+                        {/* <a href="https://twitter.com/antariksh_nitkkr" target="_blank" rel="noopener noreferrer">
+                            <img src={Twitter} alt="Twitter" />
+                        </a> */}
+                        <a href="http://www.linkedin.com/in/antariksh-nit-kurukshetra" target="_blank" rel="noopener noreferrer">
+                            <img src={LinkedIn} alt="LinkedIn" />
+                        </a>
+                        <a href="mailto:antariksh_nitkkr@gmail.com" target="_blank" rel="noopener noreferrer">
+                            <img src={Email} alt="Email" />
+                        </a>
+                    </div>
+                </div>
             </div>
+
             <hr />
             <div className="footer-end">
-                Made with ❤️ by Antariksh    
+                <p>Made with ❤️ by Antariksh</p>
             </div>
         </div>
-    )
+    );
 }
 
-export default Footer
+export default Footer;
