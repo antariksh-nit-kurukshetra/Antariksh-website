@@ -24,7 +24,7 @@ const Home = () => {
             </a>
           </div>
           <div className="button-box">
-            <a href='https://t.me/+QbPbS1e682g2NDM1' className="contact-button" target='_blank' rel="noreferrer" onClick={redirect('mail')}>
+            <a href='https://linktr.ee/antarikshnitkkr?utm_source=linktree_profile_share&ltsid=5645fcb7-dbd3-446a-9e52-9a081d687268' className="contact-button" target='_blank' rel="noreferrer" onClick={redirect('mail')}>
               <span className="button-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 21C4.45 21 3.979 20.804 3.587 20.412C3.195 20.02 2.99934 19.5493 3 19V5C3 4.45 3.196 3.979 3.588 3.587C3.98 3.195 4.45067 2.99934 5 3H16L21 8V19C21 19.55 20.804 20.021 20.412 20.413C20.02 20.805 19.5493 21.0007 19 21H5ZM7 17H17V15H7V17ZM7 13H17V11H7V13ZM15 9H19L15 5V9ZM7 9H12V7H7V9Z" fill="royalblue"/>
