@@ -1,111 +1,141 @@
-#Footer{
-    background: #1C232D;
-    position: relative;
-    overflow: hidden;
-    z-index: 2;
-    text-align: justify;
+#Footer {
+    background: linear-gradient(135deg, #0A1D37, #1F2A3B, #2A3A57);
+    color: #D4E9F1;
+    padding: 40px 20px;
+    font-family: 'Roboto', sans-serif;
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    transition: background 0.5s cubic-bezier(0.42, 0, 0.58, 1); 
 }
-.footer-main{
-    color: #FFF;
-    padding: 75px 0;
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
-#Footer ul{
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-}
-.footer-logo img{
-    width: 300px;
-}
-.footer-row-cont>li:nth-child(1){
+
+.footer-main {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
 }
-.social-medias{
-    margin-top: 50px;
+
+.footer-logo {
+    flex: 1;
+    text-align: left;
+    font-family: 'Lora', serif;
 }
-.social-medias>.text{
-    margin-bottom: 25px;
+
+.footer-logo img {
+    width: 180px;
 }
-.social-medias>.icons{
+
+.links-container {
+    flex: 2;
     display: flex;
-    justify-content: flex-start;
-    gap: 60px;
-}
-.footer-row-cont{
-    display: flex;
-    justify-content: space-evenly;
-}
-.links-heading{
-    display: inline-block;
-    border-bottom: 2px solid #F48B0C;
+    justify-content: space-around;
+    gap: 30px;
     font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 25px;
 }
-.footer-links{
-    padding: 8px 0;
-    position: relative;
+
+.footer-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #F48B0C;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
 }
-.footer-links>a::after{
-    content: "";
-    position: absolute;
-    display: inline-block;
-    left: 0;
-    bottom: -4px;
-    border-bottom: 2px solid white;
-    width: 0%;
-    transition: width .2s;
+
+.footer-links {
+    list-style: none;
+    padding: 0;
 }
-.footer-links>a:hover::after{
-    width: 100%;
+
+.footer-links li {
+    margin-bottom: 12px;
 }
-.links-heading ~ * a{
-    font-weight: 500;
+
+.footer-links a {
     text-decoration: none;
-    color: #FFF;
-    font-size: 14px;
+    color: #D4E9F1;
+    font-size: 15px;
+    transition: color 0.3s, transform 0.3s;
+    font-family: 'Roboto', sans-serif;
 }
-#Footer>hr{
-    border: 1px solid #FFF;
-    margin: 0;
+
+.footer-links a:hover {
+    color: #F48B0C;
+    transform: translateX(5px);
 }
-.footer-end{
-    color: rgba(200, 200, 200, 0.5);
+
+.social-medias {
+    flex: 1;
     text-align: center;
-    padding: 25px;
 }
-#bg-ft-cr{
-    position: absolute;
-    right: -10%;
+
+.social-medias .footer-title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #F48B0C;
 }
-#bg-ft-i1{
-    position: absolute;
-    top: 10%;
-    left: 4%;
+
+.social-medias .icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
-#bg-ft-i2{
-    position: absolute;
-    bottom: 15%;
-    right: 30%;
-    transform: translate(10px,10px);
+
+.social-medias .icons img {
+    width: 35px;
+    transition: transform 0.3s, filter 0.3s;
+    filter: grayscale(100%);
+    cursor: pointer;
 }
-@media screen and (max-width:650px) {
-    .footer-main{
-        padding-bottom: 0;
-    }
-    .footer-row-cont{
-        text-align: center;
+
+.social-medias .icons img:hover {
+    transform: scale(1.2);
+    filter: grayscale(0%);
+}
+
+#Footer > hr {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 30px 0;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-end {
+    text-align: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Roboto', sans-serif;
+    padding-top: 20px;
+    letter-spacing: 1px;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-main {
         flex-direction: column;
+        text-align: center;
     }
-    .footer-row-cont>li{
-        margin-bottom: 40px;
+    .links-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
-    .social-medias>.icons{
-        width: 40%;
-        margin-left: 30%;
-    }
-    #bg-ft-cr{
-        display: none;
+    .social-medias .icons {
+        justify-content: center;
     }
 }
