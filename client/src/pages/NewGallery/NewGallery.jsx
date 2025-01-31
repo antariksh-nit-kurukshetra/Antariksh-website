@@ -35,7 +35,7 @@ const NewGallery = () => {
     <div className="gallery-container">
       <div className="gallery-content">
         <h1 className="gallery-title">OUR GALLERY</h1>
-        <p className="gallery-description">This project is created to help businesses.</p>
+        <p className="gallery-description">Welcome to our gallery, where you can explore the highlights of our club’s events, workshops, and unforgettable trips! From hands-on workshops that spark creativity to thrilling trips that broaden our horizons, this space captures the essence of our vibrant community. Whether it's an enlightening workshop, a team-building adventure, or a memorable trip, our gallery reflects the spirit of learning, growth, and camaraderie. Join us in reliving these amazing moments and stay tuned for more exciting experiences ahead!</p>
 
         {/* Category Tabs */}
         <div className="category-tabs">

@@ -1,7 +1,9 @@
 /* Gallery container */
 .gallery-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, rgba(48, 102, 206, 0.7), rgba(36, 103, 171, 0.9)); /* Gradient background */
+  background: url('https://c4.wallpaperflare.com/wallpaper/89/995/738/space-colors-blue-purple-stars-wallpaper-preview.jpg'); /* Gradient background + image */
+  background-size: cover;
+  background-position: center;
   padding: 24px;
 }
 
@@ -12,22 +14,26 @@
   text-align: center;
   color: white; /* Text color to contrast with the background */
   animation: fadeIn 1s ease-out; /* Animation for content */
+  border-radius: 15px;
+  padding: 24px;
 }
 
 /* Gallery title */
 .gallery-title {
-  font-size: 2.25rem;
+  font-size: 2.5rem; /* Increased font size */
   font-weight: bold;
   margin-bottom: 16px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding text shadow */
   animation: slideIn 1s ease-out; /* Animation for title */
 }
 
 /* Gallery description */
 .gallery-description {
   margin-bottom: 24px;
-  font-size: 1.125rem;
+  font-size: 1.25rem; /* Slightly larger font */
   opacity: 0.8;
   animation: fadeIn 1.5s ease-out; /* Fade-in effect for description */
+  color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
 }
 
 /* Category tabs */
@@ -40,11 +46,11 @@
 }
 
 .category-tab {
-  padding: 10px 20px;
+  padding: 12px 24px; /* Larger padding */
   border-radius: 9999px;
-  border: 1px solid #e2e8f0;
-  background-color: white;
-  color: #4a5568;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  color: white;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, transform 0.2s; /* Smooth transition for hover */
 }

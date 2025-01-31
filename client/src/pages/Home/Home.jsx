@@ -13,7 +13,7 @@ const Home = () => {
     <div id="home" className='Home page'>
       <AnimatedBackground />
       <h1 className='landing-heading'>Welcome to Discover The Cosmos</h1>
-      <p className='landing-paragraph'>Unveil the wonders of the universe with our website. Delve into the mysteries of celestial phenomena, explore the intricacies of distant galaxies, and witness the awe-inspiring beauty of our cosmos.
+      <p className='landing-paragraph'>Connecting Celestial Chronicles from Aryabhata to the Cosmos. Unveil the wonders of the universe with our website. Delve into the mysteries of celestial phenomena, explore the intricacies of distant galaxies, and witness the awe-inspiring beauty of our cosmos.
         <div className="landing-buttons">
           <div className="button-box">
             <a href='https://www.instagram.com/antariksh_nitkkr' className="find-more-button" target='_blank' rel="noreferrer" onClick={redirect('instagram')}>

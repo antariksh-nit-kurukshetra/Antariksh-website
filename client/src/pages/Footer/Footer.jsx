@@ -14,7 +14,7 @@ function Footer() {
                     <a href="/" target="_blank" rel="noopener noreferrer">
                         <img className="icon" src={Logo} alt="Antariksh Logo" />
                     </a>
-                    <p className="footer-tagline">Exploring the Universe, One Step at a Time.</p>
+                    <p className="footer-tagline">Connecting Celestial Chronicles from Aryabhata to the Cosmos.</p>
                 </div>
 
                 {/* Club Links */}
