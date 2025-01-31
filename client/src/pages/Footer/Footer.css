@@ -1,60 +1,64 @@
 #Footer {
-    background: linear-gradient(135deg, #0A1D37, #1F2A3B, #2A3A57);
-    color: #D4E9F1;
+    background: url('https://www.shutterstock.com/shutterstock/videos/1108994685/thumb/1.jpg?ip=x480') no-repeat center center/cover;
+    color: #ffffff;
     padding: 40px 20px;
-    font-family: 'Roboto', sans-serif;
-    background-size: 400% 400%;
-    animation: gradientAnimation 10s ease infinite;
-    transition: background 0.5s cubic-bezier(0.42, 0, 0.58, 1); 
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+/* Adding an overlay for better readability */
+#Footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
 }
 
-.footer-main {
-    max-width: 1200px;
-    margin: 0 auto;
+/* Footer content should be above the overlay */
+.footer-container,
+.footer-bottom {
+    position: relative;
+    z-index: 2;
+}
+
+.footer-container {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: flex-start;
-    gap: 50px;
 }
 
 .footer-logo {
-    flex: 1;
-    text-align: left;
-    font-family: 'Lora', serif;
+    text-align: center;
+    max-width: 200px;
 }
 
-.footer-logo img {
-    width: 180px;
+.footer-logo .icon {
+    width: 120px;
+    margin-bottom: 10px;
 }
 
-.links-container {
-    flex: 2;
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    font-size: 16px;
+.footer-tagline {
+    font-size: 14px;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.footer-links-section,
+.social-medias {
+    margin-top: 20px;
 }
 
 .footer-title {
     font-size: 18px;
-    font-weight: 600;
-    color: #F48B0C;
-    margin-bottom: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: 'Poppins', sans-serif;
 }
 
 .footer-links {
@@ -63,79 +67,46 @@
 }
 
 .footer-links li {
-    margin-bottom: 12px;
+    margin: 8px 0;
 }
 
 .footer-links a {
+    color: #ffffff;
     text-decoration: none;
-    color: #D4E9F1;
-    font-size: 15px;
-    transition: color 0.3s, transform 0.3s;
-    font-family: 'Roboto', sans-serif;
+    transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: #F48B0C;
-    transform: translateX(5px);
+    color: #f4a261;
 }
 
-.social-medias {
-    flex: 1;
-    text-align: center;
+.icons a img {
+    width: 30px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
 }
 
-.social-medias .footer-title {
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: #F48B0C;
-}
-
-.social-medias .icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.social-medias .icons img {
-    width: 35px;
-    transition: transform 0.3s, filter 0.3s;
-    filter: grayscale(100%);
-    cursor: pointer;
-}
-
-.social-medias .icons img:hover {
+.icons a:hover img {
     transform: scale(1.2);
-    filter: grayscale(0%);
 }
 
-#Footer > hr {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    margin: 30px 0;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+hr {
+    border: none;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 20px 0;
 }
 
-.footer-end {
-    text-align: center;
+.footer-bottom {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.8);
-    font-family: 'Roboto', sans-serif;
-    padding-top: 20px;
-    letter-spacing: 1px;
+    opacity: 0.8;
 }
 
-@media screen and (max-width: 768px) {
-    .footer-main {
-        flex-direction: column;
-        text-align: center;
-    }
-    .links-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    .social-medias .icons {
-        justify-content: center;
-    }
+.footer-bottom a {
+    color: #f4a261;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
 }

@@ -1,17 +1,94 @@
-.EventsPage{
+/* Events Page Styling */
+.EventsPage {
     color: white;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
-    background-image: url('../../assets/events-bg.png');
-    background-repeat: repeat-y;
+    padding: 50px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), 
+                url('../../assets/events-bg.png');
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    min-height: 100vh;
+    text-align: center;
 }
-.EventContainer{
+
+/* Heading */
+.EventsPage h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #9dd9ff, #d4f1ff); /* Bluish Gradient */
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Events Container */
+.EventContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Individual Event Card */
+.Event {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 20px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Event:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Event Image */
+.Event img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Event Name */
+.Event h2 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #8bd6f5; /* Light Bluish */
+    margin-bottom: 10px;
+}
+
+/* Event Description */
+.Event p {
+    font-size: 1rem;
+    color: #ddd;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .Event {
+        width: 90%;
+    }
+
+    .EventsPage h1 {
+        font-size: 2.2rem;
+    }
 }
