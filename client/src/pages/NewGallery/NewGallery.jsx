@@ -1,19 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./newgallery.css";
 
-const categories = ["Corporate Apparel", "Personal/Family", "School", "Fashion"];
-const images = [
-  'https://courses.lumenlearning.com/astronomy/wp-content/uploads/sites/1095/2017/07/astronomy-cover1.jpg',
-  'https://courses.lumenlearning.com/astronomy/wp-content/uploads/sites/1095/2017/07/astronomy-cover1.jpg',
-  'https://courses.lumenlearning.com/astronomy/wp-content/uploads/sites/1095/2017/07/astronomy-cover1.jpg',
-  'https://courses.lumenlearning.com/astronomy/wp-content/uploads/sites/1095/2017/07/astronomy-cover1.jpg',
-  'https://courses.lumenlearning.com/astronomy/wp-content/uploads/sites/1095/2017/07/astronomy-cover1.jpg',
-  'https://courses.lumenlearning.com/astronomy/wp-content/uploads/sites/1095/2017/07/astronomy-cover1.jpg',
-];
+const categories = ["Techspardha", "Observation Sessions", "Workshops", "Trips"];
 
 const NewGallery = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Corporate Apparel");
+  const [selectedCategory, setSelectedCategory] = useState("Techspardha");
+  const [images, setImages] = useState({});
   const [visibleImages, setVisibleImages] = useState(6);
+  const [loading, setLoading] = useState(true); // ✅ Add loading state
+
+  // Fetch image URLs from JSON
+  useEffect(() => {
+    setLoading(true); // ✅ Set loading to true when fetching starts
+    fetch("/images.json")
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        return response.json();
+      })
+      .then(data => {
+        console.log("Fetched images:", data);
+        setImages(data.images);
+        setLoading(false); // ✅ Set loading to false after fetching
+      })
+      .catch(error => {
+        console.error("Error loading images:", error);
+        setLoading(false); // ✅ Ensure loading stops even on error
+      });
+  }, []);
+
+  // Get images of selected category
+  const categoryImages = images[selectedCategory] || [];
 
   return (
     <div className="gallery-container">
@@ -34,21 +50,28 @@ const NewGallery = () => {
           ))}
         </div>
 
-        {/* Image Grid */}
-        <div className="image-grid">
-          {images.slice(0, visibleImages).map((img, index) => (
-            <img key={index} src={img} alt="Gallery Item" className="image-item" />
-          ))}
-        </div>
+        {/* Loading Message */}
+        {loading ? (
+          <div className="loading-message">Loading images...</div> // ✅ Display loading message
+        ) : (
+          <>
+            {/* Image Grid */}
+            <div className="image-grid">
+              {categoryImages.slice(0, visibleImages).map((img, index) => (
+                <img key={index} src={img} alt="Gallery Item" className="image-item" />
+              ))}
+            </div>
 
-        {/* Load More Button */}
-        {visibleImages < images.length && (
-          <button
-            className="load-more-btn"
-            onClick={() => setVisibleImages(visibleImages + 3)}
-          >
-            Load More
-          </button>
+            {/* Load More Button */}
+            {visibleImages < categoryImages.length && (
+              <button
+                className="load-more-btn"
+                onClick={() => setVisibleImages(visibleImages + 3)}
+              >
+                Load More
+              </button>
+            )}
+          </>
         )}
       </div>
     </div>
