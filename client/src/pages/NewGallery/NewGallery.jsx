@@ -1,65 +1,58 @@
-import React, { useEffect, useState } from 'react'
-import "./newgallery.css"
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteImage, fetchGallery, fetchTotalPageCount } from '../../actions/gallery';
-import { Pagination, CircularProgress, IconButton, Button } from '@mui/material';
-import DeleteIcon from "@mui/icons-material/DeleteOutline"
-// import { Button } from 'react-scroll';
-import {adminKey} from "../Admin/keys"
+import React, { useState } from "react";
+import "./newgallery.css";
 
-
+const categories = ["Corporate Apparel", "Personal/Family", "School", "Fashion"];
+const images = [
+  'https://courses.lumenlearning.com/astronomy/wp-content/uploads/sites/1095/2017/07/astronomy-cover1.jpg',
+  'https://courses.lumenlearning.com/astronomy/wp-content/uploads/sites/1095/2017/07/astronomy-cover1.jpg',
+  'https://courses.lumenlearning.com/astronomy/wp-content/uploads/sites/1095/2017/07/astronomy-cover1.jpg',
+  'https://courses.lumenlearning.com/astronomy/wp-content/uploads/sites/1095/2017/07/astronomy-cover1.jpg',
+  'https://courses.lumenlearning.com/astronomy/wp-content/uploads/sites/1095/2017/07/astronomy-cover1.jpg',
+  'https://courses.lumenlearning.com/astronomy/wp-content/uploads/sites/1095/2017/07/astronomy-cover1.jpg',
+];
 
 const NewGallery = () => {
-    // const pageNo=(new URLSearchParams(window.location.search)).get('page');
-    const dispatch = useDispatch();
-    const { images, fetchingImages, totalPageCount } = useSelector(state => state.gallery);
-    const [currentPage, setCurrentPage] = useState(1);
-    const key = localStorage.getItem('key');
-    const handleChange = (e, value) => {
-        setCurrentPage(value);
-        // window.location.href=`/gallery?page=${currentPage}`
-    }
+  const [selectedCategory, setSelectedCategory] = useState("Corporate Apparel");
+  const [visibleImages, setVisibleImages] = useState(6);
 
+  return (
+    <div className="gallery-container">
+      <div className="gallery-content">
+        <h1 className="gallery-title">OUR GALLERY</h1>
+        <p className="gallery-description">This project is created to help businesses.</p>
 
-    useEffect(() => {
-        dispatch(fetchTotalPageCount());
-        dispatch(fetchGallery({ page: currentPage }));
-    }, [currentPage])
-    return (
-        <div id="gallery">
-            <h1>Gallery</h1>
-            <div className="gallery_container">
-                {!fetchingImages ?
-                    images.map(image =>
-                        <div key={image._id} className="gallery-container">
-                            <div className="gallery-item">
-                                <div className="gallery_item_image" style={{ backgroundImage: `url(${image.picture})` }}>
-                                   { adminKey===key &&
-                                       <Button
-                                       size="small"
-                                       style={{ backgroundColor: "white" }}
-                                       onClick={() => { dispatch(deleteImage({ _id: image._id })) }}
-                                       >
-                                        <DeleteIcon />
-                                    </Button>
-                                    }
-
-                                </div>
-                            </div>
-                        </div>
-                    )
-                    : <div className="fetching_images"><CircularProgress /></div>
-                }
-            </div>
-            <Pagination
-                style={{ margin: "30px 0" }}
-                count={totalPageCount}
-                color="secondary"
-                page={currentPage}
-                onChange={handleChange}
-            />
+        {/* Category Tabs */}
+        <div className="category-tabs">
+          {categories.map((category, index) => (
+            <button
+              key={index}
+              className={`category-tab ${selectedCategory === category ? "active" : ""}`}
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
         </div>
-    );
-}
 
-export default NewGallery
+        {/* Image Grid */}
+        <div className="image-grid">
+          {images.slice(0, visibleImages).map((img, index) => (
+            <img key={index} src={img} alt="Gallery Item" className="image-item" />
+          ))}
+        </div>
+
+        {/* Load More Button */}
+        {visibleImages < images.length && (
+          <button
+            className="load-more-btn"
+            onClick={() => setVisibleImages(visibleImages + 3)}
+          >
+            Load More
+          </button>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default NewGallery;
