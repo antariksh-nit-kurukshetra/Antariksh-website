@@ -1,63 +1,49 @@
-import React, { useEffect,useState } from 'react'
-import { Link } from "react-scroll";
+import React from 'react';
+import { Link as RouterLink } from "react-router-dom"; 
 import "./styles.css";
-import Antariksh_Logo from '../../../../assets/antariksh-logo.png'
+import Antariksh_Logo from '../../../../assets/antariksh-logo.png';
 
 const Navbar = () => {
-
     return (
         <div id="navbar">
             <div className="navbar-brand">
-                <a href='/'>
-                <img src={Antariksh_Logo} alt="Logo" className="logo" />
-                </a>
+                <RouterLink to="/"> {/* Use RouterLink for home */} 
+                    <img src={Antariksh_Logo} alt="Logo" className="logo" />
+                </RouterLink>
             </div>
             <div id="navbar_nav_items">
-
-                <Link
+                <RouterLink
                     className="navbar_link"
-                    activeClass="navbar_link_active"
-                    to="home" spy="true"
-                    smooth={true} duration={200}
-                    offset={-100}
-                    >
+                    to="/" // Use RouterLink with href-style for scrollable section
+                >
                     Home
-                </Link>
-                <Link
+                </RouterLink>
+                <RouterLink
                     className="navbar_link"
-                    activeClass="navbar_link_active"
-                    to="EventsPage" spy="true"
-                    smooth={true} duration={200}
-                    offset={-100}>
+                    to="/events" // Use RouterLink with href-style for scrollable section
+                >
                     Events
-                </Link>
-                <Link
+                </RouterLink>
+                <RouterLink
                     className="navbar_link"
-                    activeClass="navbar_link_active"
-                    to="Members" spy="true"
-                    smooth={true} duration={200}
-                    offset={-100}>
+                    to="/members" // Use RouterLink with href-style for scrollable section
+                >
                     Members
-                </Link>
-                <Link
-                    className="navbar_link"
-                    activeClass="navbar_link_active"
-                    to="gallery" spy="true"
-                    smooth={true} duration={200}
-                    offset={-100}>
+                </RouterLink>
+                
+                <RouterLink to="/newgallery" className="navbar_link">
                     Gallery
-                </Link>
-                <Link
+                </RouterLink>
+
+                <RouterLink
                     className="navbar_link"
-                    activeClass="navbar_link_active"
-                    to="about" spy="true"
-                    smooth={true} duration={200}
-                    offset={-100}>
+                    to="/about" // Use RouterLink with href-style for scrollable section
+                >
                     About
-                </Link>
+                </RouterLink>
             </div>
         </div>
-    )
+    );
 }
 
-export default Navbar
+export default Navbar;

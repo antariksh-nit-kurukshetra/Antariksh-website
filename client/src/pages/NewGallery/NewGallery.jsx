@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import "./styles.css"
+import "./newgallery.css"
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteImage, fetchGallery, fetchTotalPageCount } from '../../actions/gallery';
 import { Pagination, CircularProgress, IconButton, Button } from '@mui/material';
@@ -9,7 +9,7 @@ import {adminKey} from "../Admin/keys"
 
 
 
-const Gallery = () => {
+const NewGallery = () => {
     // const pageNo=(new URLSearchParams(window.location.search)).get('page');
     const dispatch = useDispatch();
     const { images, fetchingImages, totalPageCount } = useSelector(state => state.gallery);
@@ -62,4 +62,4 @@ const Gallery = () => {
     );
 }
 
-export default Gallery
+export default NewGallery
