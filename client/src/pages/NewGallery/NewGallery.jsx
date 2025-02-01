@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./newgallery.css";
 
-const categories = ["Techspardha", "Observation Sessions", "Workshops", "Trips"];
+const categories = ["Techspardha", "Observation Sessions", "Workshops","Events", "Trips"];
 
 const NewGallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("Techspardha");
@@ -30,6 +30,9 @@ const NewGallery = () => {
 
   // Get images of selected category
   const categoryImages = images[selectedCategory] || [];
+  console.log(categoryImages);  // Log the images for the selected category
+  console.log("Category images for", selectedCategory, ":", categoryImages);
+
 
   return (
     <div className="gallery-container">
@@ -43,7 +46,9 @@ const NewGallery = () => {
             <button
               key={index}
               className={`category-tab ${selectedCategory === category ? "active" : ""}`}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => {
+                console.log("Selected category:", category);  
+                setSelectedCategory(category)}}
             >
               {category}
             </button>
