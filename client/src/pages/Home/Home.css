@@ -1,14 +1,37 @@
 /* General Styles */
+
 .Home {
     position: relative;
     padding: 0;
     margin: 0;
     overflow-x: hidden;
     width: 100vw;
-    background-color: #0f172a; /* Dark navy-blue background for the whole page */
+    height: 100vh; /* Forces exactly the viewport height */
+    display: flex;
+    flex-direction: column;
+    background-color: #0f172a;
     background-image: url('https://img.freepik.com/free-vector/starry-night-sky-background_1048-16885.jpg?semt=ais_hybrid');
     background-size: cover;
     background-position: center;
+}
+
+/* Reduce extra margins in sections */
+.about-section,
+.members-section {
+    padding: 20px 0; /* Reduced padding */
+    margin: 0; /* Remove any additional margin */
+    width: 100vw;
+    text-align: center;
+}
+
+/* Ensure Seniors/Members appear fully in viewport */
+.members-section {
+    flex-grow: 1; /* Allows it to expand fully */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e293b;
+    color: #f8fafc;
 }
 
 
@@ -85,32 +108,23 @@
 }
 
 /* Section Styles */
-.about-section,
-.members-section,
-.footer-section {
-    margin: 0;
-    padding: 40px 0;
-    width: 100vw; /* Ensure full viewport width */
-    text-align: center;
+
+
+/* Members Section */
+.members-section {
+    background-color: #1e293b; /* Slightly lighter blue for Members */
+    color: #f8fafc; /* Light text for contrast */
 }
 
 /* About Section */
 .about-section {
     background-color: #0f172a; /* Darker background for About */
     color: #fff;
-    padding: 0; /* Remove any extra padding */
-}
-
-/* Members Section */
-.members-section {
-    background-color: #1e293b; /* Slightly lighter blue for Members */
-    color: #f8fafc; /* Light text for contrast */
-    padding: 0; /* Remove any extra padding */
 }
 
 /* Footer Section */
 .footer-section {
-    background-color: #0f172a; /* Dark footer */
+    background-color: #0f172a;
     color: #fff;
     width: 100vw;
     padding: 40px 0;
@@ -147,7 +161,7 @@
 .about-section,
 .members-section,
 .footer-section {
-    border-top: none; /* Remove any top border */
-    border-bottom: none; /* Remove any bottom border */
-    box-shadow: none; /* Ensure no shadow is causing the line */
+    border-top: none;
+    border-bottom: none;
+    box-shadow: none;
 }

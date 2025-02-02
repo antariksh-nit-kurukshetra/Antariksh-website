@@ -43,6 +43,7 @@
   gap: 16px;
   margin-bottom: 24px;
   animation: fadeIn 2s ease-out; /* Fade-in effect for category tabs */
+  flex-wrap: wrap; /* Allow category tabs to wrap if necessary */
 }
 
 .category-tab {
@@ -76,16 +77,17 @@
 
 /* Individual image item */
 .image-item {
+  width: 100%;
+  height: 250px; /* Set a fixed height */
+  object-fit: cover; /* Ensures uniform size without distortion */
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  height: auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for image effects */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .image-item:hover {
-  transform: scale(1.05); /* Slight zoom on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Load more button */
@@ -125,17 +127,51 @@
   }
 }
 
-/* Individual image item */
-.image-item {
-  width: 100%;
-  height: 250px; /* Set a fixed height */
-  object-fit: cover; /* Ensures uniform size without distortion */
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Adjust the gallery content layout */
+  .gallery-content {
+    padding: 16px;
+  }
 
-.image-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  /* Adjust gallery title for small screens */
+  .gallery-title {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  /* Adjust gallery description for small screens */
+  .gallery-description {
+    font-size: 1rem;
+  }
+
+  /* Adjust category tabs for small screens: Wrap if necessary */
+  .category-tabs {
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* Ensure category tabs do not overflow */
+  .category-tab {
+    padding: 10px 20px;
+    font-size: 0.9rem; /* Smaller font size for tabs */
+    min-width: 120px; /* Ensure a minimum width */
+  }
+
+  /* Adjust image grid for small screens: images will be stacked vertically */
+  .image-grid {
+    grid-template-columns: 1fr; /* Stack images vertically */
+  }
+
+  /* Ensure images are responsive */
+  .image-item {
+    height: 200px;  /* Adjust height for better visibility */
+  }
+
+  /* Load more button */
+  .load-more-btn {
+    width: 100%;
+    padding: 14px;
+  }
 }
