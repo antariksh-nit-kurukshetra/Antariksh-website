@@ -62,14 +62,14 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Members Section (Seniors appear above About) */}
+      <div className="members-section">
+        <Members />
+      </div>
+
       {/* About Section */}
       <div className="about-section">
         <About />
-      </div>
-
-      {/* Members Section */}
-      <div className="members-section">
-        <Members />
       </div>
     </div>
   );
