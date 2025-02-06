@@ -15,7 +15,6 @@ import './fonts/fonts.css'
 
 function App() {
 
-
   return (
     <>
       <Routes>
