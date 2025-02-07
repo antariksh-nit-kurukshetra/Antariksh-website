@@ -11,18 +11,19 @@ import About from './pages/About/About';
 import Navbar from './pages/Home/components/navbar/Navbar';
 import NewsBox from './pages/News/News-Box';
 // import { useEffect, useState } from 'react';
+import Landing from './pages/front-page/Landing';
 import './fonts/fonts.css'
 
 function App() {
-
 
   return (
     <>
       <Routes>
         <Route path="/admin" exact element={<Admin />} />
       </Routes >
-      <Navbar />
-      <Home />
+      {/* <Navbar /> */}
+      <Landing />
+      {/* <Home /> */}
       <EventsPage />
       <Members />
       {/* <Blogs /> */}
