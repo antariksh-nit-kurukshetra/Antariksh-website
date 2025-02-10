@@ -60,10 +60,10 @@
     align-items: center;
 }
 
-.button-icon img path{
+/* .button-icon img path{ */
     /* width: 15px; */
     /* fill: royalblue; */
-}
+/* } */
 
 a {
     text-decoration: none; 

@@ -8,21 +8,21 @@ import Members from './pages/Members/Members';
 import Footer from './pages/Footer/Footer';
 import EventsPage from './pages/Events/EventsPage';
 import About from './pages/About/About';
-import Navbar from './pages/Home/components/navbar/Navbar';
+import Navbar from './pages/Landing/components/Navbar'; // Updated import
 import NewsBox from './pages/News/News-Box';
+import Land from './pages/Landing/Land'; // Add this import
 // import { useEffect, useState } from 'react';
 import './fonts/fonts.css'
 
 function App() {
-
-
   return (
     <>
+      <Navbar />
       <Routes>
+        <Route path="/" exact element={<Land />} />
         <Route path="/admin" exact element={<Admin />} />
       </Routes >
-      <Navbar />
-      <Home />
+      {/* <Home /> */}
       <EventsPage />
       <Members />
       {/* <Blogs /> */}
