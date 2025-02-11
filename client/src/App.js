@@ -19,9 +19,9 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" exact element={<Land />} />
         <Route path="/admin" exact element={<Admin />} />
       </Routes >
+      <Land />
       {/* <Home /> */}
       <EventsPage />
       <Members />

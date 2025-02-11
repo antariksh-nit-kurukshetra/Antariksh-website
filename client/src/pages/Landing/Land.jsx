@@ -25,7 +25,7 @@ function HeroButtons() {
         <img src={insta_logo} alt="Instagram" className="insta-icon" />
         <span className="btn-text">FIND MORE</span>
       </a>
-      <a href="#" className="btn newsletter-btn">
+      <a href="https://linktr.ee/antarikshnitkkr?utm_source=linktree_profile_share&ltsid=5645fcb7-dbd3-446a-9e52-9a081d687268 " target="_blank" className="btn newsletter-btn">
         <img src={newsletter_logo} alt="Newsletter" className="newsletter-icon" />
         <span className="btn-text">NEWSLETTERS</span>
       </a>
