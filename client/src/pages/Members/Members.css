@@ -1,27 +1,56 @@
-.Members{
-    padding: 20px;
-    background-image: url('../../assets/members-bg.jpeg');
+.Members {
+    padding: 40px 20px;
+    background-image: url('https://www.shutterstock.com/shutterstock/videos/1108994685/thumb/1.jpg?ip=x480');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
-}
-.Members h1{
     text-align: center;
 }
-.members-container{
-    display: flex;
-    white-space: nowrap;
-    background-position: center;
-    animation: scroll 30s linear infinite;
-    width: 100%;
-    position: relative;
+
+.Members h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
-.members-container:hover{
+
+/* Scrolling Container */
+.members-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    width: max-content;
+    animation: scroll 25s linear infinite;
+}
+
+/* Pause animation on hover */
+.members-container:hover {
     animation-play-state: paused;
 }
+
+/* Keyframe animation for smooth infinite scrolling */
 @keyframes scroll {
-    0% {
-      transform: translateX(0%); 
+    from {
+        transform: translateX(0%);
     }
-    100% {
-        transform: translateX(-2774.63px);
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive Fix for Smaller Screens */
+@media (max-width: 768px) {
+    .Members h1 {
+        font-size: 2rem;
+    }
+
+    .members-container {
+        animation-duration: 20s;
+        gap: 15px;
     }
 }

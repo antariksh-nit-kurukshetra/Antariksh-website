@@ -1,63 +1,36 @@
-import React, { useEffect,useState } from 'react'
-import { Link } from "react-scroll";
+import React, { useState } from 'react';
+import { Link as RouterLink } from "react-router-dom"; 
 import "./styles.css";
-import Antariksh_Logo from '../../../../assets/antariksh-logo.png'
+import Antariksh_Logo from '../../../../assets/antariksh-logo.png';
 
 const Navbar = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
 
     return (
-        <div id="navbar">
+        <nav id="navbar">
             <div className="navbar-brand">
-                <a href='/'>
-                <img src={Antariksh_Logo} alt="Logo" className="logo" />
-                </a>
+                <RouterLink to="/"> 
+                    <img src={Antariksh_Logo} alt="Logo" className="logo" />
+                </RouterLink>
+                {/* Hamburger Menu Icon */}
+                <div className="hamburger" onClick={toggleMenu}>
+                    ☰
+                </div>
             </div>
-            <div id="navbar_nav_items">
-
-                <Link
-                    className="navbar_link"
-                    activeClass="navbar_link_active"
-                    to="home" spy="true"
-                    smooth={true} duration={200}
-                    offset={-100}
-                    >
-                    Home
-                </Link>
-                <Link
-                    className="navbar_link"
-                    activeClass="navbar_link_active"
-                    to="EventsPage" spy="true"
-                    smooth={true} duration={200}
-                    offset={-100}>
-                    Events
-                </Link>
-                <Link
-                    className="navbar_link"
-                    activeClass="navbar_link_active"
-                    to="Members" spy="true"
-                    smooth={true} duration={200}
-                    offset={-100}>
-                    Members
-                </Link>
-                <Link
-                    className="navbar_link"
-                    activeClass="navbar_link_active"
-                    to="gallery" spy="true"
-                    smooth={true} duration={200}
-                    offset={-100}>
-                    Gallery
-                </Link>
-                <Link
-                    className="navbar_link"
-                    activeClass="navbar_link_active"
-                    to="about" spy="true"
-                    smooth={true} duration={200}
-                    offset={-100}>
-                    About
-                </Link>
-            </div>
-        </div>
-    )
+            
+            <ul id="navbar_nav_items" className={menuOpen ? "show" : ""}>
+                <li><RouterLink className="navbar_link" to="/">Home</RouterLink></li>
+                <li><RouterLink className="navbar_link" to="/events">Events</RouterLink></li>
+                <li><RouterLink className="navbar_link" to="/members">Members</RouterLink></li>
+                <li><RouterLink className="navbar_link" to="/newgallery">Gallery</RouterLink></li>
+                <li><RouterLink className="navbar_link" to="/about">About</RouterLink></li>
+            </ul>
+        </nav>
+    );
 }
 
-export default Navbar
+export default Navbar;

@@ -1,0 +1,177 @@
+/* Gallery container */
+.gallery-container {
+  min-height: 100vh;
+  background: url('https://c4.wallpaperflare.com/wallpaper/89/995/738/space-colors-blue-purple-stars-wallpaper-preview.jpg'); /* Gradient background + image */
+  background-size: cover;
+  background-position: center;
+  padding: 24px;
+}
+
+/* Gallery content */
+.gallery-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: white; /* Text color to contrast with the background */
+  animation: fadeIn 1s ease-out; /* Animation for content */
+  border-radius: 15px;
+  padding: 24px;
+}
+
+/* Gallery title */
+.gallery-title {
+  font-size: 2.5rem; /* Increased font size */
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding text shadow */
+  animation: slideIn 1s ease-out; /* Animation for title */
+}
+
+/* Gallery description */
+.gallery-description {
+  margin-bottom: 24px;
+  font-size: 1.25rem; /* Slightly larger font */
+  opacity: 0.8;
+  animation: fadeIn 1.5s ease-out; /* Fade-in effect for description */
+  color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+}
+
+/* Category tabs */
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  animation: fadeIn 2s ease-out; /* Fade-in effect for category tabs */
+  flex-wrap: wrap; /* Allow category tabs to wrap if necessary */
+}
+
+.category-tab {
+  padding: 12px 24px; /* Larger padding */
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s; /* Smooth transition for hover */
+}
+
+.category-tab:hover {
+  background-color: #3182ce;
+  color: white;
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.category-tab.active {
+  background-color: #3182ce;
+  color: white;
+}
+
+/* Image grid */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  animation: fadeIn 2.5s ease-out; /* Fade-in effect for image grid */
+}
+
+/* Individual image item */
+.image-item {
+  width: 100%;
+  height: 250px; /* Set a fixed height */
+  object-fit: cover; /* Ensures uniform size without distortion */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Load more button */
+.load-more-btn {
+  margin-top: 24px;
+  padding: 12px 24px;
+  background-color: #3182ce;
+  color: white;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.load-more-btn:hover {
+  background-color: #2b6cb0;
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Adjust the gallery content layout */
+  .gallery-content {
+    padding: 16px;
+  }
+
+  /* Adjust gallery title for small screens */
+  .gallery-title {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  /* Adjust gallery description for small screens */
+  .gallery-description {
+    font-size: 1rem;
+  }
+
+  /* Adjust category tabs for small screens: Wrap if necessary */
+  .category-tabs {
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* Ensure category tabs do not overflow */
+  .category-tab {
+    padding: 10px 20px;
+    font-size: 0.9rem; /* Smaller font size for tabs */
+    min-width: 120px; /* Ensure a minimum width */
+  }
+
+  /* Adjust image grid for small screens: images will be stacked vertically */
+  .image-grid {
+    grid-template-columns: 1fr; /* Stack images vertically */
+  }
+
+  /* Ensure images are responsive */
+  .image-item {
+    height: 200px;  /* Adjust height for better visibility */
+  }
+
+  /* Load more button */
+  .load-more-btn {
+    width: 100%;
+    padding: 14px;
+  }
+}

@@ -1,5 +1,29 @@
 export const membersData = [
   {
+    name: "SatyaPrakash Sahoo",
+    post: "Newsletter Head",
+    branch: "Production Engg.",
+    year: "Finals",
+    photo: "satyaprakash.jpg",
+    gif: "",
+  },
+  {
+    name: "Ujjwal Gupta",
+    post: "Observational Astronomy Head",
+    branch: "Mechanical Engg.",
+    year: "Finals",
+    photo: "ujjwal.jpg",
+    gif: "",
+  },
+  {
+    name: "Kamakshi Shamra",
+    post: "Editor-in-chief (Newsletter)",
+    branch: "Production Engg.",
+    year: "Finals",
+    photo: "kamakshi.jpg",
+    gif: "",
+  },
+  {
     name: "Nittin Madgotara",
     post: "President",
     branch: "Electrical Engg.",
